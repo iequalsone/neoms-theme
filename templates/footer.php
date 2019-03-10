@@ -16,7 +16,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 first">
-        <p class="font-montserrat">TELL YOUR MUSICIAN FRIENDS</p>
+        <p class="font-montserrat">TELL YOUR FRIENDS</p>
       </div>
       <div class="col-sm-6 last">
         <?=do_shortcode('[rrssb_share]');?>

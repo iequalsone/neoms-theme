@@ -198,7 +198,7 @@ function get_contact_info($atts)
 {
     $html = "";
     $html .= "<div class='contact-info-wrap'>";
-    $html .= "<p class='font-montserrat bold font-large'><span class='white'>MUSIC</span><span class='green'>NL</span></p>";
+
     if (COMPANY_ADDRESS_LINE_1) {$html .= "<p>" . COMPANY_ADDRESS_LINE_1;}
     if (COMPANY_ADDRESS_LINE_2) {$html .= "<br />" . COMPANY_ADDRESS_LINE_2 . "</p>";
     } else { $html .= "</p>";}

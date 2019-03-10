@@ -1,0 +1,171 @@
+// Event Listing Archive
+body.post-type-archive-event_listing, body.tax-event_category, body.tax-event_tag{
+  .sidebar{
+    .col-sm-12{
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    h2{
+      position: relative;
+
+      @media #{$xs-only}{
+        cursor: pointer;
+      }
+
+      &::after{
+        @media #{$xs-only}{
+          position: absolute;
+          right: 0;
+          font-family: FontAwesome;
+          color: $blue;
+          content: "\f107";
+          @include transition(all .2s ease-in);
+        }
+      }
+
+      &.active{
+        &::after{
+          @media #{$xs-only}{
+            @include rotate(-180deg);
+          }
+        }
+      }
+    }
+
+    hr{
+      @media #{$xs-only}{
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .event_listing{
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: dashed 1px $gray-light;
+
+    &:last-child{
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    a{
+      &::before{
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        content: "";
+      }
+    }
+
+    .event-date{
+      padding: .5em;
+      border: solid 1px $gray-light;
+      @extend .font-montserrat;
+      overflow: hidden;
+
+      .month{
+        display: block;
+        text-transform: uppercase;
+        color: white;
+        font-size: .8em;
+        margin-bottom: 2em;
+        overflow: hidden;
+      }
+
+      .day{
+        display: block;
+        text-align: right;
+        color: $blue;
+        font-size: 2em;
+        line-height: 1;
+      }
+    }
+
+    h2, h3{
+      margin-bottom: .5em;
+    }
+
+    h2{
+      font-size: 1em;
+      color: white;
+    }
+
+    h3{
+      font-size: 1em;
+
+      a{
+        color: $gray-lighter;
+        text-transform: capitalize;
+        text-decoration: none;
+      }
+    }
+
+    .entry-summary{
+      a{
+        color: $blue;
+        text-transform: uppercase;
+        font-size: .75em;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Single Event Posting
+body.single-event_listing{
+  .main{
+    h2{
+      color: white;
+    }
+
+    .event-date, .event-location{
+      color: $blue;
+      text-transform: uppercase;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    a{
+      color: $blue;
+      text-decoration: underline;
+    }
+
+    .event-tags{
+      margin-top: 2em;
+      margin-bottom: 2em;
+
+      a{
+        text-transform: uppercase;
+      }
+    }
+
+    .share-wrap{
+      padding-top: 1em; padding-bottom: 1em;
+      margin: 1em 0;
+      border-top: solid 1px $gray;
+      border-bottom: solid 1px $gray;
+    }
+
+    .share-label{
+      @media #{$xs-only}{
+        margin-bottom: 2em;
+        text-align: center;
+      }
+
+      position: relative;
+      top: .5em;
+    }
+
+    .rrssb-buttons{
+      @media #{$xs-only}{
+        padding-left: 0;
+      }
+    }
+  }
+}

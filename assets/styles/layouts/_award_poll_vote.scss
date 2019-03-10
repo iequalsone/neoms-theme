@@ -1,0 +1,149 @@
+.message-container{
+	.message{
+		display: none;
+		position: relative;
+		height: 0;
+		@include transition(all .2s ease-in);
+		padding: 2em 3em;
+		background: $orange;
+		color: #fff;
+		p{
+			display: inline-block;
+			font-size: 1.5em;
+			text-transform: uppercase;
+			margin-bottom: 0;
+			font-family: 'Montserrat', sans-serif;
+			@media#{$sm}{
+				margin-left: 3em;
+			}
+		}
+		.fa{
+			&::before{
+				color: #fff;
+				font-size: 3em;
+				position: absolute;
+				top: 25%;
+			}
+		}
+		&.success{
+			display: block;
+			height: auto;
+			background: $green;
+		}
+		&.error{
+			display: block;
+			height: auto;
+			background: $red;
+		}
+	}
+}
+#award-nominees-voting-form{
+	.award-section{
+		margin: 0 0 1.5em 0;
+		legend{
+			margin-top: 0;
+			@extend .font-montserrat;
+			color: $charcoal;
+			font-weight: 700!important;
+			text-transform: uppercase;
+			// padding: 0 0 1em 0;
+			// margin-bottom: 1em;
+			border-color: $charcoal;
+			.h2{
+				font-weight: 700!important;
+			}
+			.playlist-container{
+				margin-bottom: 1.5em;
+				@media#{$sm}{
+					text-align: right;
+				}
+				a{
+					font-size: .85em;
+					@media#{$sm}{
+						margin-top: 1.4em;
+					}
+					display: inline-block;
+				}
+			}
+		}
+		.nominees-container{
+			.member-directory-item{
+				@media#{$xs-only}{
+					// max-width: 80%;
+					// margin-left: 19%;
+				}
+				.inner-wrap{
+					&:hover, &:focus{
+						a{
+						}
+					}
+
+					img{
+					}
+					&::before{
+						@include opacity(0);
+						@include transition(all .2s ease-in);
+						@include rotate(45deg);
+						content: '';
+						position: absolute;
+						top: 49%;
+						right: -91%;
+					}
+				}
+
+				a{
+
+					&::before{
+						position: relative;
+						z-index: 0;
+						display: none;
+					}
+				}
+				&.selected{
+					.inner-wrap{
+						border-color: $green;
+						&::before{
+							@include opacity(1);
+							top: 9%;
+							right: -28%;
+							padding: .5em 1em;
+							color: #fff;
+							background: $green;
+							font-family: 'Montserrat',sans-serif;
+							content: 'selected';
+							text-transform: uppercase;
+							color: #fff;
+							font-weight: 600;
+							width: 100%;
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.awards-nav{
+	&.fixed {
+        position: fixed;
+        top: 1.5em;
+        max-width: 33.33%;
+    }
+
+    &.bottom {
+        position: absolute;
+        bottom: 0;
+        top: auto;
+        max-width: 33.33%;
+    }
+	ul{
+		list-style: none;
+		padding-left: 0;
+		li{
+			a{
+				display: block;
+				padding: .5em 0;
+			}
+		}
+	}
+}

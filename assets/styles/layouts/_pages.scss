@@ -1,0 +1,198 @@
+// About Us Page
+body.about{
+	h2{
+		border-bottom: solid 1px $gray;
+		padding-bottom: .5em;
+		margin-bottom: .5em;
+	}
+
+	.staff-row{
+		margin-bottom: 2em;
+	}
+
+	.staff-profile-image{
+		margin-bottom: 1em;
+	}
+
+	.staff-info{
+		@media #{$xs-only}{
+			text-align: center;
+		}
+
+		h3{
+			color: $charcoal;
+		}
+
+		.position{
+			color: $gray-light;
+			@extend .font-montserrat;
+		}
+
+		a{
+			text-decoration: underline;
+		}
+	}
+
+	.single-doc{
+		position: relative;
+		padding-left: 6em;
+		margin-bottom: 1em;
+
+		h2, h3{
+			border: none;
+			padding-bottom: 0;
+		}
+
+		a{
+			&::before{
+				position: absolute;
+				z-index: 1;
+				left: 0; right: 0;
+				top: 0; bottom: 0;
+				content: "";
+			}
+		}
+
+		&::before{
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			padding: .5em 1em;
+			border: solid 1px $gray;
+			font-family: FontAwesome;
+			font-size: 1.6em;
+			color: $green;
+			content: "\f1c1";
+			@include transition(all .2s ease-in-out);
+		}
+
+		&:hover{
+			&::before{
+				background-color: $green;
+				color: white;
+			}
+		}
+	}
+}
+
+
+// Contact Us page
+body.contact{
+	.social-wrap{
+		a{
+			font-size: 1.5em;
+			margin-right: .5em;
+		}
+	}
+
+	.staff-contact{
+		display: block;
+		margin: 0 0 1em 0;
+		.col-sm-12{
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+
+		p{
+			margin-bottom: 0;
+		}
+
+		.title{
+			margin-bottom: .5em;
+		}
+	}
+
+	form{
+		position: relative;
+		@extend .clearfix;
+	}
+
+	.gfield{
+		&.full-name, &.email, &.subject, &.message{
+			@media #{$xs-only}{
+				padding-left: 0; padding-right: 0;
+			}
+		}
+
+		&.full-name{
+			@media #{$sm}{
+				padding-left: 0;
+			}
+		}
+
+		&.email{
+			@media #{$sm}{
+				padding-right: 0;
+			}
+		}
+
+		&.subject, &.message{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.checkbox label:before{
+		background: transparent;
+		outline: none !important;
+	}
+
+	.gfield_label{
+		display: none !important;
+	}
+
+	.gform_button{
+		@media #{$sm}{
+			position: absolute;
+			z-index: 1;
+			right: 0;
+			bottom: 2em;
+			width: auto;
+			color: $gray-light;
+			background-color: transparent;
+			border: solid 1px $green;
+			@include transition(all .2s ease-in-out);
+		}
+
+		&:hover{
+			background-color: $green;
+			color: white;
+		}
+	}
+}
+
+// For and About Our Members
+body.for-about-our-members{
+	.btn{
+		color: $red;
+		text-decoration: underline;
+	}
+}
+
+// Renew Membership
+body.renew-membership{
+	.gform_fields{
+		#field_7_1, #field_7_2{
+			display: block !important;
+		}
+	}
+}
+
+// Become Member Application
+body.parent-pageid-38.application{
+	.gform_fields{
+		#field_1_13{
+			>label{
+				display: none !important;
+			}
+		}
+	}
+}
+
+// Industry Partners
+body.post-type-archive-industry_partner{
+	.type-industry_partner{
+		margin-bottom: 2em;
+	}
+}

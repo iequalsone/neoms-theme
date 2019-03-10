@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+.font-montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Istok+Web:400,400i,700,700i');
+.font-istok{
+  font-family: 'Istok Web', sans-serif;
+}
+
+body{
+  @extend .font-istok;
+}
+
+html, html a {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+h1, h2, h3, h4, h5{
+  margin-top: 0;
+  @extend .font-montserrat;
+  color: $charcoal;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  span{
+    font-weight: 400;
+  }
+}
+
+h2{
+  font-size: 2em;
+}
+
+h3{
+  font-size: 1.5em;
+}

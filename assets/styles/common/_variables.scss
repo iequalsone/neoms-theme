@@ -1,0 +1,39 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+
+$xs-only: "(max-width: 767px)";
+$sm: "(min-width: 768px)";
+$sm-only: "(min-width: 768px) and (max-width: 991px)";
+$md: "(min-width: 992px)";
+$lg: "(min-width: 1200px)";
+
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+$sidebar-md-columns:    4;
+
+// Colors
+$brand-primary:         #b6d666;
+$green:                 $brand-primary;
+$blue:                  #28a8e0;
+$red:                   #ef465a;
+$orange:                #f99b1f;
+$black:                 #25262a;
+$gray:                  lighten(#3d4048, 5%);
+$gray-light:            #6d6e71;
+$gray-lighter:          #9b9c9f;
+$charcoal:				lighten(#50535f, 5%);
+
+.red{ color: $red; }
+.blue{ color: $blue; }
+.orange{ color: $orange; }
+.green{ color: $green; }
+.black{ color: $black; }
+.white{ color: white; }
+.gray{ color: $gray; }
+.gray-light{ color: $gray-light; }
+.gray-lighter{ color: $gray-lighter; }
+.charcoal{ color: $charcoal; }
+
+.bold{ font-weight: 700; }
+.font-large{ font-size: 1.2em; }

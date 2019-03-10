@@ -1,0 +1,320 @@
+body.page-template-template-member-dashboard{
+  .profile-links{
+    padding: 1em 0;
+    margin-bottom: 1em;
+    border-bottom: solid 1px $gray;
+
+    a{
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-top: .5em;
+      padding-bottom: .5em;
+      padding-right: 2em;
+      color: $gray-light;
+      text-transform: uppercase;
+      font-size: 1.4em;
+      font-weight: bold;
+      border-bottom: solid 1px $gray;
+      @extend .font-montserrat;
+
+      &:hover{
+        text-decoration: none;
+        color: $red;
+      }
+
+      &:last-child{
+        border-bottom: none;
+      }
+
+      i{
+        position: absolute;
+        right: 0;
+        color: $red;
+      }
+    }
+  }
+
+  .member-expiration{
+    padding: 1em 0;
+    margin-bottom: 2em;
+    border-bottom: solid 1px $gray;
+
+    h3{
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+
+    strong{
+      color: $red;
+      text-transform: uppercase;
+      font-size: 2em;
+      @extend .font-montserrat;
+    }
+  }
+
+  .funding-deadlines{
+    h3{
+      font-size: 1.25em;
+    }
+
+    ul{
+      padding-left: 0;
+      list-style: none;
+
+      li{
+        margin-bottom: .5em;
+      }
+    }
+
+    .date{
+      display: block;
+      color: $red;
+    }
+
+    a{
+      color: $gray-light;
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+  h3.genre{
+    color: $red;
+  }
+
+  h2 span{
+    font-weight: 400;
+  }
+
+  .pageviews{
+    i{
+      margin-right: .25em;
+    }
+
+    .total{
+      // @media #{$xs-only}{
+      //   display: block;
+      //   width: 100%;
+      //   float: left;
+      // }
+
+      @media #{$sm}{
+        float: right;
+      }
+    }
+  }
+
+  .expired-membership-wrap{
+    padding: 3em;
+    border: solid 2px $red;
+    text-align: center;
+
+    @media #{$xs-only}{
+      padding: 1em;
+    }
+
+    h2{
+      color: $red;
+      margin-bottom: 1em;
+    }
+
+    p{
+      font-weight: 700;
+      margin-bottom: 2em;
+    }
+
+    .btn{
+      padding: 1em 0;
+      width: 100%;
+      background: $red;
+      color: white;
+    }
+  }
+
+  .upcoming-events-wrap{
+    .event_listing{
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      border-bottom: dashed 1px $gray-light;
+
+      &:last-child{
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      a{
+        &::before{
+          position: absolute;
+          left: 0; right: 0;
+          top: 0; bottom: 0;
+          content: "";
+        }
+      }
+
+      .event-date{
+        padding: .5em;
+        border: solid 1px $gray-light;
+        @extend .font-montserrat;
+        overflow: hidden;
+
+        @media #{$sm}{
+          max-width: 5em;
+        }
+
+        .month{
+          display: block;
+          text-transform: uppercase;
+          color: white;
+          font-size: .8em;
+          margin-bottom: 2em;
+          overflow: hidden;
+        }
+
+        .day{
+          display: block;
+          text-align: right;
+          color: $red;
+          font-size: 2em;
+          line-height: 1;
+        }
+      }
+
+      h2, h3{
+        margin-bottom: .5em;
+      }
+
+      h2{
+        font-size: 1em;
+        color: white;
+      }
+
+      h3{
+        font-size: 1em;
+
+        a{
+          color: $gray-lighter;
+          text-transform: capitalize;
+          text-decoration: none;
+        }
+      }
+
+      .entry-summary{
+        a{
+          color: $red;
+          text-transform: uppercase;
+          font-size: .75em;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  a.add-event{
+    color: $gray-light;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    @extend .font-montserrat;
+
+    &:hover, &:focus{
+      text-decoration: none;
+    }
+
+    i{
+      color: $red;
+    }
+
+    &.active{
+      i::before{
+        content: "\f146";
+      }
+    }
+  }
+
+  .event-collapsible{
+    display: none;
+  }
+
+  .row{
+    margin-bottom: 1em;
+  }
+
+  label{
+    display: block;
+  }
+
+  input[type=text], textarea{
+    width: 100%;
+    border: solid 1px $gray;
+    background: transparent;
+    color: $gray-lighter;
+    padding: 6px 12px;
+    @include placeholder($gray-lighter);
+
+    &:hover{ border-color: $green; }
+    &:focus{
+      border-color: $green;
+      outline: 0;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(182,214,102,.6);
+    }
+  }
+
+  textarea{
+    height: 15em;
+  }
+  
+  #ui-timepicker-div{
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .ui-timepicker-table td a{
+    width: auto !important;
+  }
+
+  .submit{
+    margin-top: .5em;
+  }
+  .award-voting-call-to-action{
+    border-bottom: 2px solid #b6d666;
+    margin-bottom: 2.5em;
+    padding: 1em 0;
+    @media#{$xs-only}{
+      text-align: center;
+    }
+    a{
+      &.btn, &.button{
+        // margin-left: 2em;
+        font-size: 1.6em;
+        z-index: 1;
+        right: 0;
+        bottom: 2em;
+        width: auto;
+        color: #6d6e71;
+        background-color: transparent;
+        border: 1px solid #b6d666;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        &:hover, &:focus, &:active{
+          color: #fff;
+          background: #b6d666;
+        }
+        @media#{$xs-only}{
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    .vote-button-container{
+      @media#{$sm}{
+        text-align: right;
+      }
+    }
+  }
+}

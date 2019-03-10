@@ -1,0 +1,111 @@
+// Opportunities
+body.post-type-archive-opportunity, &.tax-opportunity_category, &.tax-opportunity_tag{
+	.opportunity-item{
+		margin-bottom: 2em;
+	}
+
+	.date-wrap-col{
+		max-width: 7em;
+	}
+
+	.date-wrap{
+		border: solid 1px $gray;
+		overflow: hidden;
+	}
+
+	.month, .day{
+		display: block;
+		text-transform: uppercase;
+		@extend .font-montserrat;
+	}
+
+	.month{
+		font-size: .6em;
+		color: white;
+		padding: .4em;
+	}
+
+	.day{
+		color: $orange;
+		font-size: 2em;
+		font-weight: 700;
+		text-align: right;
+		line-height: 1;
+		padding: .2em;
+	}
+
+	.link a{
+		color: $orange;
+		text-decoration: underline;
+	}
+
+	.block{
+		display: block;
+	}
+
+	a.block{
+		margin-top: .5em;
+		color: $gray-lighter;
+
+		&::before{
+			position: absolute;
+			left: 0; right: 0;
+			top: 0; bottom: 0;
+			content: "";
+		}
+
+		&:hover{
+			text-decoration: none;
+			color: $orange;
+		}
+	}
+
+	.logo{
+		padding: 1em 0;
+	}
+
+  .navigation{
+    a{
+      color: $orange;
+    }
+  }
+}
+
+
+// Single Opportunity Item
+body.single-opportunity{
+	.opportunity{
+		margin-bottom: 2em;
+	}
+
+	.opportunity-tags{
+		a{
+			color: $orange;
+		}
+	}
+
+	.share-wrap{
+		margin-bottom: 1em;
+	}
+
+	.post-navigation-wrap{
+		a{
+			color: $orange;
+		}
+	}
+
+  .sidebar{
+    .nav{
+      a{
+        padding-left: 0; padding-right: 0;
+        color: $orange;
+        text-decoration: underline;
+
+        &:hover, &:focus{
+          background-color: transparent;
+          color: lighten($orange, 10%);
+        }
+      }
+    }
+  }
+}

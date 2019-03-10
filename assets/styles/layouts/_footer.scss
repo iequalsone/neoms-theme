@@ -1,0 +1,111 @@
+.pre-footer-wrap {
+  padding: 3em 0;
+  background: url(/sage/dist/images/section-bg-polygons.jpg) center center
+    no-repeat;
+  background-size: cover;
+
+  h1,
+  p {
+    color: white;
+    @extend .font-montserrat;
+  }
+
+  p {
+    margin-bottom: 2em;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.rrssb-share-wrap {
+  margin-top: 2em;
+  margin-bottom: 6em;
+
+  .first,
+  .last {
+    @media #{$xs-only} {
+      text-align: center;
+    }
+  }
+
+  .first {
+    font-weight: 700;
+
+    @media #{$sm} {
+      text-align: right;
+    }
+
+    p {
+      color: $gray-lighter;
+
+      @media #{$sm} {
+        padding-top: 0.5em;
+      }
+    }
+  }
+}
+
+#embed-player-wrap {
+  display: none;
+}
+
+.content-info {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  background: $gray;
+  width: 100%;
+
+  .copy-right {
+    padding-top: 1.5em;
+    @extend .font-montserrat;
+    font-size: 1.15em;
+    color: $gray-lighter;
+  }
+}
+
+.footer-nav-wrap {
+  text-align: center;
+
+  @media #{$sm} {
+    text-align: right;
+  }
+}
+
+.menu-footer-navigation-container {
+  display: inline-block;
+
+  .nav {
+    margin: 1em 0;
+    text-align: center;
+    li {
+      display: inline;
+      color: white;
+      font-size: 1em;
+      &::before {
+        color: $green;
+      }
+      a {
+        display: inline;
+        padding-left: 0.4em;
+        padding-right: 0.8em;
+        color: $gray-lighter;
+        text-decoration: underline;
+        @extend .font-istok;
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          color: $green;
+        }
+      }
+    }
+  }
+}

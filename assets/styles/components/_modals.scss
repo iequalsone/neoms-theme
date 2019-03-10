@@ -1,0 +1,130 @@
+.modal-dialog {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40em;
+
+  @media #{$xs-only} {
+    width: 85%;
+  }
+
+  .modal-header {
+    border-bottom: none;
+
+    .close {
+      color: $gray-lighter;
+      opacity: 1;
+      text-shadow: none;
+
+      &:hover,
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .modal-content {
+    background: $black;
+  }
+
+  .modal-title {
+    text-align: center;
+    color: $green;
+  }
+
+  .gform_button {
+    width: 100%;
+  }
+
+  .gfield_label {
+    text-transform: uppercase;
+    color: $gray-lighter;
+  }
+}
+
+#member-log-in-modal {
+  .modal-content {
+    max-width: 30em;
+    margin: 0 auto;
+  }
+}
+
+#newsletter-signup-modal {
+  .modal-dialog {
+    top: 50%;
+    margin-top: -15%;
+    width: auto;
+    max-width: 50em;
+
+    @media #{$sm} {
+      margin-top: -25%;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .modal-content {
+    width: auto !important;
+    max-width: 50em !important;
+    padding: 0;
+
+    h1,
+    p {
+      color: white;
+    }
+
+    input.email{
+      width: 100% !important;
+      padding: 1em !important;
+    }
+
+    input.button {
+      width: auto !important;
+      background: transparent !important;
+      border: solid 1px $green !important;
+      margin-top: 1em !important;
+      padding: 1em !important;
+    }
+
+    .col-sm-6 {
+      padding: 2em;
+    }
+
+    .left {
+      position: relative;
+      z-index: 0;
+      background: url("/sage/assets/images/default-event.jpg") center center
+        no-repeat;
+      background-size: cover;
+
+      &::before {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        content: "";
+      }
+
+      h1 {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+
+  .close {
+    position: relative;
+    right: -0.7em;
+    top: -1em;
+
+    span {
+      color: white;
+    }
+  }
+}

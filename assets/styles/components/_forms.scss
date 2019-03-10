@@ -1,0 +1,522 @@
+// Search form
+.search-form {
+  @extend .form-inline;
+}
+.search-form label {
+  font-weight: normal;
+  @extend .form-group;
+}
+.search-form .search-field {
+  @extend .form-control;
+}
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+/* Gravity Forms Styling */
+.gform_wrapper ul {
+  @extend .list-unstyled;
+  padding-left: 0;
+}
+.gform_wrapper li {
+  @extend .form-group;
+}
+.gform_wrapper form {
+  margin-bottom: 0;
+}
+.gform_wrapper .gform_heading{
+  margin-bottom: 1em;
+}
+.gform_wrapper .gfield_required {
+  padding-left: 1px;
+  color: $state-danger-text;
+}
+.gfield .gfield_label{
+  display: block !important;
+}
+.gfield .gfield_label, .gfield.field_sublabel_above{
+  color: $gray-light;
+}
+.gfield .ginput_container_radio, .gfield .ginput_container_checkbox{
+  input[type=radio] {
+    display: none;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=radio] label, input[type=checkbox] label {
+    position: relative;
+    cursor: pointer;
+  }
+
+  input[type=radio] + label:before, input[type=checkbox] + label:before {
+    content: '';
+    display:inline-block;
+    width:14px;
+    height:14px;
+    margin: 0px 8px 0 8px;
+    vertical-align:middle;
+    cursor:pointer;
+    border-radius:  50%;
+    background-color: $black;
+    border: 1px solid $gray-light;
+  }
+
+  input[type=radio]:checked + label, input[type=checkbox]:checked + label {
+    position: relative;
+    &:before {
+      background-color: $green;
+    }
+  }
+}
+.ginput_container input,
+.ginput_container select,
+.ginput_container textarea {
+	@extend .form-control;
+  background-color: $black;
+  border-radius: 0;
+  border-color: $gray;
+  color: $gray-lighter;
+
+  &:hover{ border-color: $green; }
+  &:focus{
+    border-color: $green;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(182,214,102,.6);
+  }
+
+  @include placeholder($gray-light);
+}
+.ginput_container textarea {
+  height: auto;
+}
+.gform_button {
+	@extend .btn;
+	@extend .btn-primary;
+  width: 100%;
+}
+.gform_wrapper .gfield_error {
+  .gfield_label {
+    color: $state-danger-text;
+  }
+  input,
+  select,
+  textarea {
+    border-color: $alert-danger-border;
+    background-color: $alert-danger-bg;
+    color: $alert-danger-text;
+    @include form-control-focus($alert-danger-text);
+  }
+}
+.validation_error {
+	@extend .alert;
+	@extend .alert-danger;
+}
+.validation_message{
+  font-style: italic;
+  color: $gray-lighter;
+}
+#gforms_confirmation_message {
+	@extend .alert;
+	@extend .alert-success;
+}
+
+// login form customizations
+#gform_fields_login{
+  // remember me toggle
+  #field_3{
+    display: none;
+  }
+}
+
+.gform_login_widget{
+  .widgettitle{
+    display: none;
+  }
+
+  .gform_wrapper{
+    .gform_fields{
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    li{
+      // margin-left: 0;
+      // margin-right: 0;
+    }
+
+    .paypal-logo{
+      display: none;
+    }
+
+    .gform_footer{
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .gform_button{
+      width: 100%;
+      margin-bottom: 1em;
+      background: $green;
+      border: solid 1px $green;
+
+      &:hover{
+        background: $green;
+      }
+    }
+  } 
+
+  nav{
+    text-align: center;
+
+    a{
+      display: block;
+      padding: .5em 0;
+    }
+
+    br{
+      display: none;
+    }
+  }
+}
+
+// stylized select dropdown arrow
+.minimal select{
+  background-color: #25262a;
+  border-radius: 0;
+  border-color: $gray;
+  color: #9b9c9f;
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  background-image: none;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+  /* reset */
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, $red 50%),
+    linear-gradient(135deg, $red 50%, transparent 50%),
+    linear-gradient(to right, $gray-light, $gray-light);
+  background-position:
+    calc(100% - 13px) calc(1em + 0),
+    calc(100% - 8px) calc(1em + 0),
+    calc(100% - 2em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+.minimal select:focus {
+  background-image:
+    linear-gradient(45deg, $red 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, $red 50%),
+    linear-gradient(to right, $gray-light, $gray-light);
+  background-position:
+    calc(100% - 8px) 1em,
+    calc(100% - 13px) 1em,
+    calc(100% - 2em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: $green;
+  outline: 0;
+}
+
+// custom Password Reset form
+.password-reset-form{
+  ul{
+    list-style: none;
+    padding-left: 0;
+
+    label{
+      text-align: left;
+      text-transform: uppercase;
+      display:block;
+    }
+
+    input{
+      width: 100%;
+      background: transparent;
+      border: solid 1px $gray-light;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.428571429;
+
+      &:focus{
+        border-color: #b6d666;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px hsla(77,58%,62%,.6);
+      }
+    }
+  }
+
+  .gform_footer{
+    input{
+      width: 100%;
+      background: $green;
+      color: white;
+      border: none;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.428571429;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+}
+
+.multi-step-form_wrapper{
+  .validation_error{
+    display: none;
+  }
+
+  .sub-title{
+    margin-bottom: 0 !important;
+
+    h2{
+      font-size: 1.2em;
+    }
+  }
+
+  .gf_page_steps{
+    @extend .row;
+    @extend .col-sm-3;
+    @extend .no-padding;
+    margin-bottom: 2em;
+
+    .gf_step{
+      @extend .col-sm-12;
+    }
+
+    .gf_step_number{
+      display: none;
+    }
+
+    .gf_step_label{
+      text-transform: uppercase;
+      @extend .font-montserrat;
+
+      &::before{
+        font-family: FontAwesome;
+        content: "\f0c8";
+        margin-right: .5em;
+        color: $gray-light;
+      }
+    }
+
+    .gf_step_completed{
+      .gf_step_label::before{
+        content: "\f14a";
+        color: $orange;
+      }
+    }
+  }
+
+  .gform_body{
+    @extend .col-sm-9;
+
+    @media #{$xs-only}{
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .gform_page{
+      @extend .row;
+    }
+  }
+
+  .list-inline{
+    margin-left: 0;
+
+    ul{
+      @extend .list-inline;
+    }
+  }
+
+  .gfield{
+    margin-bottom: 2em;
+    .ginput_container_radio input[type=radio]:checked+label {
+      &:before {
+        background-color: $orange;
+      }
+    }
+    .ginput_container input, .ginput_container select, .ginput_container textarea{
+      &:hover, &:focus{
+        border-color: $orange;
+        @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(249, 155, 31, .6));
+      }
+    }
+
+    .gfield_radio{
+      li{
+        padding-left: 0;
+        padding-right: 1.5em;
+
+        label::before{
+          margin-left: 0;
+        }
+      }
+    }
+
+    &.label{
+      display: block;
+      text-align: left;
+      font-size: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 0;
+
+      h2{
+        font-size: 1.2em;
+        color: $charcoal;
+        white-space: normal;
+      }
+    }
+  }
+
+  .ginput_container_fileupload {
+    overflow: hidden;
+    position: relative;
+    margin-top: 1em;
+
+    &::before{
+      content: "CHOOSE FILE";
+      color: white;
+      @extend .font-montserrat;
+    }
+  }
+
+  .ginput_container_fileupload [type=file] {
+    cursor: inherit;
+    display: block;
+    font-size: 999px;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+  }
+
+  /* Example stylistic flourishes */
+
+  .ginput_container_fileupload {
+    float: left;
+    padding: .5em;
+    background: $orange;
+    border: solid 1px $orange;
+    border-radius: 0;
+    color: white;
+  }
+
+  .ginput_container_fileupload [type=file] {
+    cursor: pointer;
+  }
+
+  .gform_page_footer{
+    @extend .col-sm-12;
+    
+    .button{
+      background: transparent;
+      border: none;
+      color: $gray-light;
+
+      &:hover, &:focus{
+        outline: none;
+        text-decoration: underline;
+      }
+    }
+
+    .gform_previous_button{
+      float: left;
+      color: $gray-light;
+    }
+
+    .gform_next_button{
+      float: right;
+    }
+
+    .gform_button{
+      position: absolute;
+      bottom: -6em;
+      left: 15px;;
+      float: left;
+      background: $orange;
+      border-radius: 0;
+      color: white;
+      padding: 1em 3em;
+      width: auto;
+
+      @media #{$sm}{
+        bottom: -4em;
+      }
+    }
+  }
+
+  #gf_step_4_1{
+    &::before{
+      @extend h4;
+      display: block;
+      width: 100%;
+      font-size: 1em;
+      margin-top: .5em;
+      margin-left: .2em;
+      margin-bottom: 0;
+      content: "Sections:";
+    }
+  }
+
+  #gf_step_4_4{
+    &::before{
+      @extend h4;
+      display: block;
+      width: 100%;
+      font-size: 1em;
+      margin-top: .5em;
+      margin-left: .2em;
+      margin-bottom: 0;
+      content: "Budget Sections:";
+    }
+  }
+}
+
+.gform_wrapper .populate-member-categories{
+  .gfield_checkbox li{
+    display: inline;
+  }
+}

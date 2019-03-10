@@ -1,0 +1,163 @@
+// Become a Member Application Form
+.page-id-76{
+  .gform_fields{
+    @extend .row;
+  }
+  .gfield.password-field{
+    .gfield_label{ display: none; }
+  }
+  .gfield .ginput_container_password{
+    .ginput_left input{
+      @media #{$xs-only}{
+        margin-bottom: 1em;
+      }
+    }
+    .ginput_left, .ginput_right{ display: block; @extend .col-sm-6; }
+  }
+  .gfield.password-field{
+    // float: left;
+    width: 100%;
+    display: block;
+
+    .gfield_description{
+      float: left;
+      width: 100%;
+      padding-left: 15px;
+    }
+  }
+  .gform_button{
+    background-color: $red;
+    border-color: $red;
+    width: auto;
+    @include transition(all .2s ease-in);
+
+    &:hover, &:focus{
+      background-color: darken($red, 10%);
+    }
+  }
+  .gform_footer{
+    @extend .col-sm-12;
+  }
+  .paypal-logo{
+    position: relative;
+    width: 9em;
+    top: -.3em;
+    margin-left: 1em;
+  }
+}
+
+// Single Member Profile
+.single-user_profile{
+  .member-info-wrap{
+    h2{
+      a{
+        color: $green;
+        font-size: .6em;
+        text-transform: lowercase;
+      }
+    }
+
+    .genre{
+      font-size: 1.25em;
+    }
+
+    .col-sm-12{
+      margin-bottom: 1em;
+
+      p{
+        margin-bottom: 0;
+      }
+    }
+
+    h4{
+      color: $red;
+    }
+
+    a{
+      color: $gray-light;
+
+      i{
+        color: $red;
+      }
+    }
+
+    .btn-default{
+      width: 100%;
+      color: white;
+      @include transition(all .2s ease-in);
+
+      &:hover, &:focus{
+        background: $red;
+        outline: none;
+      }
+    }
+  }
+
+  .member-profile-image{
+    margin-bottom: 2em;
+
+    .profile-image{
+      margin-bottom: 1em;
+    }
+  }
+
+  .additional-images{
+    padding-left: 0;
+    list-style: none;
+    @extend .row;
+
+    li{
+      @extend .col-xs-4;
+      @extend .col-sm-3;
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  .member-content-wrap{
+    position: relative;
+    overflow: hidden;
+    @include transition(all .2s ease-in);
+    max-height: 20em;
+
+    @media #{$sm}{ max-height: 10em; }
+    @media #{$md}{ max-height: 18em; }
+    @media #{$lg}{ max-height: 25em; }
+
+    &::after{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      padding-top: 3em;
+      width: 100%;
+      font-family: FontAwesome;
+      font-size: 2em;
+      text-align: center;
+      content: "\f107";
+      opacity: 1;
+      @include gradient-vertical(transparent, $black, 0%, 75%);
+    }
+
+    &.expanded{
+      max-height: none;
+      margin-bottom: 1em;
+
+      &::after{
+        opacity: 0;
+      }
+    }
+  }
+
+  .share-wrap .row{
+    .col-sm-4{ padding-right: 0; }
+    .col-sm-8{ padding-left: 0; }
+
+    p{
+      padding-top: .5em;
+      font-size: .9em;
+    }
+  }
+}
